@@ -1,20 +1,24 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:logger/logger.dart';
 
-class AuthService extends ChangeNotifier {
+final logger = Logger();
+
+class AuthService extends ChangeNotifier with WidgetsBindingObserver {
   final db = FirebaseFirestore.instance;
   final auth = FirebaseAuth.instance;
   User? user;
   User? get currentUser => user;
 
   AuthService() {
+    WidgetsBinding.instance!.addObserver(this);
     auth.authStateChanges().listen((User? user) async {
       this.user = user;
       if (user == null) {
-        print("User is currently signed out!");
+        logger.i("User is signed out!");
       } else {
-        print("User is signed in!");
+        logger.i("User is signed in!");
       }
       notifyListeners();
     });
@@ -26,10 +30,7 @@ class AuthService extends ChangeNotifier {
           .signInWithEmailAndPassword(email: email, password: password);
 
       // update the status of the user to online if the user signs in
-      await db
-          .collection('users')
-          .doc(user!.uid)
-          .update({'status_online': true});
+      updateUserStatus(user, true);
       return 'Success';
     } on FirebaseAuthException catch (e) {
       if (e.code == 'user-not-found') {
@@ -98,9 +99,21 @@ class AuthService extends ChangeNotifier {
     await auth.signOut();
 
     // update the status to offline if the user signs out
+    updateUserStatus(user, false);
+  }
+
+  Future<void> updateUserStatus(User? user, bool status) async {
     await db
         .collection('users')
         .doc(user!.uid)
-        .update({'status_online': false});
+        .update({'status_online': status});
+    logger.i('Updated user ${user.uid} status to $status');
+  }
+
+  void appCycleChanged(AppLifecycleState state) async {
+    if (state == AppLifecycleState.detached) {
+      updateUserStatus(user, false);
+      logger.i('App is in detached state and user status is set to offline');
+    }
   }
 }

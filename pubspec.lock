@@ -129,14 +129,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.0.8"
-  dart_jsonwebtoken:
-    dependency: transitive
-    description:
-      name: dart_jsonwebtoken
-      sha256: "00a0812d2aeaeb0d30bcbc4dd3cee57971dbc0ab2216adf4f0247f37793f15ef"
-      url: "https://pub.dev"
-    source: hosted
-    version: "2.17.0"
   dart_earcut:
     dependency: transitive
     description:
@@ -145,6 +137,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.2.0"
+  dart_jsonwebtoken:
+    dependency: transitive
+    description:
+      name: dart_jsonwebtoken
+      sha256: "00a0812d2aeaeb0d30bcbc4dd3cee57971dbc0ab2216adf4f0247f37793f15ef"
+      url: "https://pub.dev"
+    source: hosted
+    version: "2.17.0"
   desktop_webview_auth:
     dependency: transitive
     description:
@@ -205,7 +205,7 @@ packages:
     dependency: "direct main"
     description:
       name: firebase_auth
-      sha256: "91587615d7d9165c65a030426e3cf40bbec37c486f52ff654af17aba5be3d208"
+      sha256: "2886a01a895565722add556510263231390a9f1d1d51eee34c22f9b94a73dd54"
       url: "https://pub.dev"
     source: hosted
     version: "5.4.2"
@@ -477,6 +477,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "5.1.1"
+  lists:
+    dependency: transitive
+    description:
+      name: lists
+      sha256: "4ca5c19ae4350de036a7e996cdd1ee39c93ac0a2b840f4915459b7d0a7d4ab27"
+      url: "https://pub.dev"
+    source: hosted
+    version: "1.0.1"
   logger:
     dependency: transitive
     description:
@@ -493,14 +501,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.3.0"
-  lists:
-    dependency: transitive
-    description:
-      name: lists
-      sha256: "4ca5c19ae4350de036a7e996cdd1ee39c93ac0a2b840f4915459b7d0a7d4ab27"
-      url: "https://pub.dev"
-    source: hosted
-    version: "1.0.1"
   matcher:
     dependency: transitive
     description:
@@ -525,6 +525,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.16.0"
+  mgrs_dart:
+    dependency: transitive
+    description:
+      name: mgrs_dart
+      sha256: fb89ae62f05fa0bb90f70c31fc870bcbcfd516c843fb554452ab3396f78586f7
+      url: "https://pub.dev"
+    source: hosted
+    version: "2.0.0"
   mock_exceptions:
     dependency: transitive
     description:
@@ -549,14 +557,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.0.0"
-  mgrs_dart:
-    dependency: transitive
-    description:
-      name: mgrs_dart
-      sha256: fb89ae62f05fa0bb90f70c31fc870bcbcfd516c843fb554452ab3396f78586f7
-      url: "https://pub.dev"
-    source: hosted
-    version: "2.0.0"
   path:
     dependency: transitive
     description:
@@ -597,6 +597,22 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "3.9.1"
+  polylabel:
+    dependency: transitive
+    description:
+      name: polylabel
+      sha256: "41b9099afb2aa6c1730bdd8a0fab1400d287694ec7615dd8516935fa3144214b"
+      url: "https://pub.dev"
+    source: hosted
+    version: "1.0.1"
+  proj4dart:
+    dependency: transitive
+    description:
+      name: proj4dart
+      sha256: c8a659ac9b6864aa47c171e78d41bbe6f5e1d7bd790a5814249e6b68bc44324e
+      url: "https://pub.dev"
+    source: hosted
+    version: "2.1.0"
   provider:
     dependency: "direct main"
     description:
@@ -629,22 +645,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "0.28.0"
-  polylabel:
-    dependency: transitive
-    description:
-      name: polylabel
-      sha256: "41b9099afb2aa6c1730bdd8a0fab1400d287694ec7615dd8516935fa3144214b"
-      url: "https://pub.dev"
-    source: hosted
-    version: "1.0.1"
-  proj4dart:
-    dependency: transitive
-    description:
-      name: proj4dart
-      sha256: c8a659ac9b6864aa47c171e78d41bbe6f5e1d7bd790a5814249e6b68bc44324e
-      url: "https://pub.dev"
-    source: hosted
-    version: "2.1.0"
   sky_engine:
     dependency: transitive
     description: flutter
