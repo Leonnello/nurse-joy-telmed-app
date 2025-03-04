@@ -93,11 +93,12 @@ class _HomeScreenState extends State<HomeScreen> {
   int _selectedIndex = 1;
   User? user;
   String _appBarTitle = 'Nurse Joy';
+  final auth = AuthService();
 
   @override
   void initState() {
     super.initState();
-    user = AuthService().user;
+    user = auth.user;
   }
 
   final List<Widget> _pages = [
