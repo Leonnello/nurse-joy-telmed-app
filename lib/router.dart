@@ -3,7 +3,6 @@ import 'package:go_router/go_router.dart';
 import 'package:nursejoyapp/auth/provider/auth_service.dart';
 import 'package:nursejoyapp/features/chat/ui/pages/chat_list_page.dart';
 import 'package:nursejoyapp/features/dashboard/ui/pages/dashboard_page.dart';
-import 'package:nursejoyapp/features/emergency/ui/pages/emergency_page.dart';
 import 'package:nursejoyapp/features/map/ui/pages/viewmap.dart';
 import 'package:nursejoyapp/features/profile/ui/pages/profile_page.dart';
 import 'package:nursejoyapp/features/profile/ui/pages/profile_setup.dart';
@@ -69,10 +68,6 @@ class AppRouter {
       GoRoute(
         path: '/profile-setup',
         builder: (context, state) => const ProfileSetup(),
-      ),
-      GoRoute(
-        path: '/emergency',
-        builder: (context, state) => const EmergencyPage(),
       ),
       GoRoute(
         path: '/settings',

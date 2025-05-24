@@ -7,7 +7,6 @@ import 'features/signing/ui/pages/register_page.dart';
 import 'features/chat/ui/pages/chat_list_page.dart';
 import 'features/dashboard/ui/pages/dashboard_page.dart';
 import 'features/profile/ui/pages/profile_page.dart';
-import 'features/emergency/ui/pages/emergency_page.dart';
 import 'package:provider/provider.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:go_router/go_router.dart';
@@ -161,25 +160,6 @@ class _HomeScreenState extends State<HomeScreen> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: const Color(0xFF58f0d7),
-        actions: [
-          if (_selectedIndex == 0)
-            buildCircleImage('assets/img/nursejoy.jpg', 5, 1.5),
-          if (_selectedIndex == 1)
-            TextButton.icon(
-              onPressed: () {
-                context.go('/emergency');
-              },
-              label: const Text(
-                'E.M.',
-                style: TextStyle(
-                  color: Colors.red,
-                  fontSize: 20,
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
-              icon: const Icon(Icons.warning_sharp, color: Colors.red),
-            ),
-        ],
         centerTitle: true,
         leading: Builder(
           builder: (context) => IconButton(
@@ -222,13 +202,6 @@ class _HomeScreenState extends State<HomeScreen> {
                     title: const Text('Home'),
                     onTap: () {
                       context.go('/home');
-                    },
-                  ),
-                  ListTile(
-                    leading: const Icon(Icons.emergency_outlined),
-                    title: const Text('Activate Emergency Mode'),
-                    onTap: () {
-                      context.go('/emergency');
                     },
                   ),
                   ListTile(
